@@ -6,6 +6,7 @@ import {
     NavItem,
     NavLink
  } from 'reactstrap';
+ import {Link} from 'react-router-dom';
 
 function NavBar()
 {
@@ -25,7 +26,7 @@ function NavBar()
                 </Nav>
                 <Nav navbar>
                     <NavItem>
-                        <NavLink className="nav-link" href = "#">Home Page</NavLink>
+                        <Link to="/"><NavLink className="nav-link">Home Page</NavLink></Link>
                     </NavItem>
                 </Nav>
             </Navbar>
