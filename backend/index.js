@@ -24,7 +24,7 @@ app.get('/news/:name', (req,res)=> {
     let weekAgoString = weekAgo.toISOString().slice(0, 10)
     let currentString = currentDate.toISOString().slice(0, 10)
 
-    const headers = {headers:{'X-Finnhub-Token':process.env.API_KEY}}
+    const headers = {headers:{'X-Finnhub-Token':process.env.FINNHUB_TOKEN}}
     axios.get(`https://finnhub.io/api/v1/company-news?symbol=${name}&from=${weekAgoString}&to=${currentString}`, headers)  
     .then(function(response) {
         res.status(200).json(response.data);
