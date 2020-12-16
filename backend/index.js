@@ -10,9 +10,9 @@ app.get('/',(req,res)=>{
     res.send('Hello world');
 })
 
-app.get('/stockname',(req, res)=>{
+app.get('/stockname/:NAME',(req, res)=>{
     const headers = {headers:{'Authorization':process.env.API_KEY}}
-    let NAME = 'AAPL'
+    let NAME = req.params.NAME
     axios.get(`https://finnhub.io/api/v1/quote?symbol=${NAME}&token=bv6jgev48v6s9eue2ndg`, headers)
     .then(function(response){
         console.log(response);
