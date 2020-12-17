@@ -37,9 +37,9 @@ app.get('/news/:name', (req,res)=> {
 })
 
 app.post('/comprehend', (req,res)=>{
-    var json = req.body;
+    var newsHeadlines = req.body;
 
-    axios.post('https://codubee-api.herokuapp.com/comprehension', json)
+    axios.post('https://codubee-api.herokuapp.com/comprehension', newsHeadlines)
     .then(function(response){
         res.status(200).json(response.data);
     })
