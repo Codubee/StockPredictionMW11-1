@@ -50,4 +50,17 @@ app.get('/news/:name', (req,res)=> {
 
 })
 
+app.post('/comprehend', (req,res)=>{
+    var newsHeadlines = req.body;
+
+    axios.post('https://codubee-api.herokuapp.com/comprehension', newsHeadlines)
+    .then(function(response){
+        res.status(200).json(response.data);
+    })
+    .catch(function(error){
+        console.log(error)
+        res.status(400).json({error: "An error occurred"})
+    })
+})
+
 module.exports = app;
