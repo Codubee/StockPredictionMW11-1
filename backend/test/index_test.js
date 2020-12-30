@@ -23,4 +23,27 @@ describe('Tests index.js',()=>{
             done();
         })
     })
+
+    it('/comprehend endpoint should work with 1 input', (done)=> {
+        chai.request(app)
+        .post('/comprehend')
+        .send({news: "Good Input"})
+        .end((err,res)=>{
+            res.text.should.contain('POSITIVE')
+            done();
+        })
+    })
+
+    it('/comprehend endpoint should work with multiple inputs', (done)=>{
+        chai.request(app)
+        .post('/comprehend')
+        .send({
+            news: ["Good Headline", "Bad Headline"]
+        })
+        .end((err,res)=>
+        {
+            res.text.should.contain('MIXED')
+            done();
+        })
+    })
 })
