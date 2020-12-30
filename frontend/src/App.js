@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage'
+import StockDetails from './components/StockDetails/StockDetails'
 import NavBar from './components/Navbar/Navbar'
 import {
   BrowserRouter as Router,
@@ -16,6 +17,7 @@ function App() {
       <NavBar/>
         <Switch>
           <Route exact path="/" component={LandingPage}/>
+          <Route path="/information/:companyName" component={StockDetails}/>
         </Switch>
       </Router>
     </>
