@@ -19,19 +19,21 @@ export default class News extends React.Component {
     }
 
     render() {
-        let smallNewsArr = this.state.news.slice(0, 5)
+        let smallNewsArr = this.state.news.slice(0, 7)
         return (
             <>
+            <h2>Latest news articles on {this.state.companyName}</h2>
             <ListGroup>
-                {
+                {   
                     smallNewsArr.map((news, index) => (
-                        <ListGroupItem>
-                            <ListGroupItemHeading>
+                        <ListGroupItem key={index}>
+                            <ListGroupItemHeading className="text-left">
                                 <Media object width="20%" src={news.image}/>
+                                <br/>
                                 <a href={news.url}>{news.headline}</a>        
                             </ListGroupItemHeading>
-                            <ListGroupItemText>
-                                <p>Summary: {news.summary}</p>
+                            <ListGroupItemText> 
+                                <p className="text-left">Summary: {news.summary}</p>
                                 <p>Source: {news.source}</p>
                                 <p>{getTime(news.datetime)}</p>
                             </ListGroupItemText>
