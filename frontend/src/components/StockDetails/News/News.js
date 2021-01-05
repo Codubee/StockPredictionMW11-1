@@ -26,21 +26,24 @@ export default class News extends React.Component {
             <ListGroup>
                 {   
                     smallNewsArr.map((news, index) => (
+
                         <ListGroupItem key={index}>
                             <ListGroupItemHeading className="text-left">
                                 <Media object width="20%" src={news.image}/>
                                 <br/>
                                 <a href={news.url}>{news.headline}</a>        
                             </ListGroupItemHeading>
+                            
                             <ListGroupItemText> 
                                 <p className="text-left">Summary: {news.summary}</p>
                                 <p>Source: {news.source}</p>
                                 <p>{getTime(news.datetime)}</p>
                             </ListGroupItemText>
                         </ListGroupItem>
-                        ))
+
+                    ))
                         
-                    }   
+                }   
             </ListGroup>
             </>
         )
