@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Media } from 'reactstrap'
+import { ListGroup, ListGroupItem, ListGroupItemHeading, ListGroupItemText, Media, Card } from 'reactstrap'
 
 
 export default class News extends React.Component {
@@ -19,14 +19,14 @@ export default class News extends React.Component {
     }
 
     render() {
-        let smallNewsArr = this.state.news.slice(0, 7)
+        let smallNewsArr = this.state.news.slice(0, 5)
         return (
             <>
             <h2>Latest news articles on {this.state.companyName}</h2>
+            
             <ListGroup>
                 {   
                     smallNewsArr.map((news, index) => (
-
                         <ListGroupItem key={index}>
                             <ListGroupItemHeading className="text-left">
                                 <Media object width="20%" src={news.image}/>
