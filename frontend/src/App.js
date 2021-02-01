@@ -3,6 +3,7 @@ import './App.css';
 import LandingPage from './components/LandingPage/LandingPage'
 import StockDetails from './components/StockDetails/StockDetails'
 import NavBar from './components/Navbar/Navbar'
+import CompanyNameInput from './components/CompanyNameInput/CompanyNameInput'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={LandingPage}/>
           <Route path="/information/:companyName" component={StockDetails}/>
+          <Route path="/userinput" component={CompanyNameInput}/>
         </Switch>
       </Router>
     </>

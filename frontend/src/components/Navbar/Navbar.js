@@ -13,7 +13,7 @@ function NavBar()
     return(
         <div>
             <Navbar color = "light" light expand = "md">      
-                <NavbarBrand className="nav-brand" href = "#">Stock Prediction MW11-1</NavbarBrand>
+                <Link to="/"><NavbarBrand className="nav-brand" href = "#">Stock Prediction MW11-1</NavbarBrand></Link>
                 <Nav navbar>
                     <NavItem>
                         <NavLink className="nav-link" href = "https://github.com/Codubee/StockPredictionMW11-1">GitHub</NavLink>
@@ -21,7 +21,7 @@ function NavBar()
                 </Nav>
                 <Nav navbar>
                     <NavItem>
-                        <NavLink  className="nav-link" href = "#">User Input</NavLink>
+                        <Link to="/userinput"><NavLink  className="nav-link">User Input</NavLink></Link>
                     </NavItem>
                 </Nav>
                 <Nav navbar>
