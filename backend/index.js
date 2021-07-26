@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 app.get('/stockname/:NAME',(req, res)=>{
     const headers = {headers:{'Authorization':process.env.QUOTE_API_KEY}}
     let NAME = (req.params.NAME).toUpperCase();
-    axios.get(`https://finnhub.io/api/v1/quote?symbol=${NAME}&token=bv6jgev48v6s9eue2ndg`, headers)
+    axios.get(`https://finnhub.io/api/v1/quote?symbol=${NAME}&token=`, headers)
     .then(function(response){
         console.log(response);
         res.status(200).json(response.data);
